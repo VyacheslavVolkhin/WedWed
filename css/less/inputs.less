@@ -1,0 +1,428 @@
+/* ----------------------------------- *\
+			inputs elements styles
+\* ----------------------------------- */
+.form-input {
+
+}
+textarea.form-input {
+
+}
+select.form-input {
+    display: block;
+    width: 100%;
+    padding-right: 30px;
+    background-image: url(../img/icons/arrow-select.svg);
+    background-position: right 20px center;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -webkit-appearance: none;
+    appearance: none!important;
+    line-height: 1em;
+    text-indent: 0.01px;
+    text-overflow: '';
+    outline: none;
+    &.form-input-clear {
+        height: auto;
+        border: none;
+        min-height: 0;
+        border-radius: 0;
+        box-shadow: none;
+        width: auto;
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 1em;
+        line-height: inherit;
+        padding: 0 16px 0 0;
+        color: inherit;
+        font-weight: bold;
+        background-image: url(../img/icons/arrow-select.png);
+        background-size: 8px auto;
+        background-repeat: no-repeat;
+        background-position: right center;
+    }
+}
+select::-ms-expand {
+    display: none;
+}
+//   <select class="form-input form-input-line" required>
+//       <option value="" disabled selected hidden>Выбрать</option>
+//       <option>Пункт списка</option>
+//   </select>
+select.form-input:required:invalid {
+    color: #ADADAD;
+}
+.btn {
+    height: 50px;
+    padding: 0 3rem;
+    position: relative;
+    z-index: 2;
+    font-size: 15px;
+    line-height: (20/15);
+    font-weight: 600;
+    color: #fff;
+    &:before, &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        border-radius: 25px;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        transition: all ease 0.2s;
+    }
+    &:before {
+    }
+    &:after {
+        z-index: -2;
+    }
+    &:before {
+        border: 1px solid var(--clr-att);
+        background-color: var(--clr-att);
+    }
+    &:hover {
+        background-color: transparent;
+        border: none;
+        color: #fff;
+        &:before {
+            background-color: var(--clr-att-hover);
+            border-color: var(--clr-att-hover);
+        }
+    }
+    &.button-border {
+        &:not(:hover) {
+            color: var(--clr-att);
+            &:before {
+                background-color: transparent;
+            }
+        }
+        &:hover, &.active {
+            &:before {
+                background-color: var(--clr-att);
+                border-color: var(--clr-att);
+            }
+            .button-ico {
+                filter: brightness(0) invert(1);
+            }
+        }
+    }
+    &.button-second {
+        &:before {
+            background-color: #4C90E5;
+            border: none;
+        }
+        &:hover {
+            &:before {
+                background-color: #4C90E5+#222;
+            }
+        }
+    }
+    &.button-third {
+        color: var(--clr-base);
+        &:before {
+            background-color: #5DFFB6;
+            border: none;
+        }
+        &:hover {
+            color: var(--clr-base);
+            &:before {
+                background-color: #5DFFB6+#222;
+            }
+        }
+    }
+    &.button-att {
+        &:hover {
+            &:before {
+                opacity: 0;
+            }
+            &:after {
+                opacity: 1;
+            }
+        }
+        &:before {
+            .main-gr();
+            border: none;
+        }
+        &:after {
+            .main-hgr();
+            border: none;
+        }
+    }
+    &.button-tag {
+        height: 26px;
+        border-radius: 13px;
+        border: 1px solid #A7ABB4;
+        background-color: transparent;
+        padding: 0 11px;
+        font-size: 16px;
+        color: #A7ABB4;
+        letter-spacing: -0.01em;
+        font-weight: 400;
+        text-transform: none;
+        &:before, &:after {
+            display: none;
+        }
+        &:hover {
+            background-color: var(--clr-att);
+            border-color: var(--clr-att);
+            color: #fff;
+        }
+        .button-title {
+            display: block;
+            max-width: 100%;
+            flex: 1;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            position: relative;
+            overflow: hidden;
+        }
+    }
+    .button-ico {
+        width: 24px;
+        height: 24px;
+        margin: 0 10px;
+        transition: all ease 0.2s;
+        &:last-child {
+            margin-right: 0;
+        }
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+}
+.btn-action-tab {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    letter-spacing: -0.01em;
+    color: rgba(26, 25, 25, 0.75);
+    font-weight: 600;
+    transition: all ease 0.2s;
+    &:hover {
+        color: var(--clr-base);
+    }
+    &.active {
+        color: var(--clr-base);
+        &:before {
+            opacity: 1;
+        }
+    }
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        .main-gr();
+        opacity: 0;
+        transition: opacity ease 0.2s;
+    }
+}
+.btn-action-ico {
+    min-width: 0;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    font-size: 0;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    width: 40px;height: 40px;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+    transition: all ease 0.2s;
+    flex-shrink: 0;
+    &:not(.btn) {
+        background: none;
+        border: none;
+        box-shadow: none;
+    }
+    &.btn {
+        min-width: 0;
+        min-height: 0;
+        padding: 0;
+        display: block;
+    }
+    &:before, &:after, [class*="icon-"], img, svg {
+        display: block;
+        position: absolute;
+        top: 0;bottom: 0;left: 0;right: 0;
+        margin: auto;
+        max-width: 100%;
+        max-height: 100%;
+        transition: all ease 0.2s;
+    }
+    img, svg {
+        max-width: 24px;
+        max-height: 24px;
+    }
+    &:before, &:after {
+        content: "";
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 24px auto;
+    }
+    &:hover {
+        text-decoration: none;
+        &:not(.btn) {
+            background: none;
+            box-shadow: none;
+        }
+    }
+    &.ico-play {
+        width: 6.6rem;
+        height: 6.6rem;
+        border-radius: 50%;
+        .main-gr();
+        &:hover {
+            .main-gr();
+        }
+        &:before {
+            background-image: url(../img/icons/play.svg);
+            background-size: 1.5rem auto;
+            left: 6px;
+        }
+    }
+    &.ico-arrow {
+        z-index: 20;
+        cursor: pointer;
+        width: 4.8rem;
+        height: 4.8rem;
+        background-color: #fff;
+        border-radius: 50%;
+        transition: all ease 0.2s;
+        &:after {
+            border-radius: 50%;
+            .main-gr();
+            opacity: 1;
+        }
+        &:hover {
+            background-color: #fff;
+            filter: brightness(1.2);
+            &:after {
+                opacity: 1;
+            }
+            &:before {
+                filter: brightness(0) invert(1);
+            }
+        }
+        &:before {
+            background-image: url(../img/icons/arrow-slider.svg);
+            background-size: 100% auto;
+            z-index: 3;
+            filter: brightness(0) invert(1);
+        }
+        &.slick-disabled {
+            pointer-events: none;
+            &:before {
+                filter: none;
+            }
+            &:after {
+                opacity: 0;
+            }
+        }
+    }
+    &.ico-arrow-next {
+        &:before {
+            .t-rotate(180deg);
+        }
+    }
+    &.ico-menu {
+        &:before {
+            background-image: url(../img/icons/menu.svg);
+            background-size: 40px auto;
+            transition: none;
+        }
+        &.active {
+            &:after, &:before {
+                transition: none;
+                width: 24px;
+                height: 18px;
+                border-top: 2px solid var(--clr-att);
+                border-bottom: 2px solid var(--clr-att);
+                margin: -9px 0 0 -12px;
+                top: 50%;
+                left: 50%;
+                right: auto;
+                bottom: auto;
+            }
+            &:before {
+                height: 2px;
+                margin-top: -1px;
+                border-top: none;
+            }
+            &.active {
+                &:after {
+                    height: 2px;
+                    margin-top: -1px;
+                    border-top: none;
+                    .t-rotate(-45deg);
+                }
+                &:before {
+                    .t-rotate(45deg);
+                }
+            }
+        }
+    }
+    &.ico-close {
+        &:after, &:before {
+            width: 20px;
+            height: 2px;
+            top: 50%;
+            left: 50%;
+            bottom: auto;
+            right: auto;
+            margin: -1px 0 0 -10px;
+            background: var(--clr-base);
+        }
+        &:before {
+            .t-rotate(45deg);
+        }
+        &:after {
+            .t-rotate(-45deg);
+        }
+    }
+    &.button-soc {
+        width: 28px;
+        height: 28px;
+        background-color: #fff;
+        border-radius: 50%;
+        &:hover {
+            background-color: #fff;
+            opacity: 0.8;
+        }
+        img, svg {
+            max-width: 18px;
+            max-height: 18px;
+        }
+    }
+}
+@media (min-width: 1024px) {
+    .btn {
+        height: 6rem;
+        font-size: 1.8rem;
+        line-height: (25/18);
+        &:after, &:before {
+            border-radius: 3rem;
+        }
+    }
+    .btn-action-ico {
+        &.button-soc {
+            width: 5rem;
+            height: 5rem;
+            img, svg {
+                max-width: 3.2rem;
+                max-height: 3.2rem;
+            }
+        }
+    }
+}

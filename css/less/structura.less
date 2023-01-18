@@ -6,21 +6,22 @@ html, body {
 	padding: 0;
 	width: 100%;
 	height: 100%;
-	min-width: var(--min, 320px);
+	min-width: var(--min);
 }
-body {
-    //min-height: -webkit-fill-available;
+.cnt-full-wrap {
+    margin-left: calc(var(--paddingContainer) * -1);
+    margin-right: calc(var(--paddingContainer) * -1);
+    padding-left: var(--paddingContainer);
+    padding-right: var(--paddingContainer);
 }
-html {
-    //height: -webkit-fill-available;
-}
-.inner-wrap, .page {
+.inner-wrap, .page-full {
 	position: relative;
 	clear: both;
 	margin: 0 auto;
-	padding: 0 20px;
-	min-width: var(--min, 320px);
-	max-width: var(--max, 1200px);
+    padding-left: var(--paddingContainer);
+    padding-right: var(--paddingContainer);
+	min-width: var(--min);
+	max-width: var(--max);
 	width: 100%;
 	.inner-wrap {
 		min-width: 0;
@@ -31,20 +32,17 @@ html {
 		min-width: 0;
 	}
 }
-.page {
+.page-full {
 	flex: 1 0 auto;
 }
-.wrap, .footer {
-	// -webkit-transform: translate3d(0,0,0);
-}
 .wrap,
-.header,
-.nav,
-.footer,
+//.header,
+//.nav,
+//.footer,
 .cnt-section {
 	position: relative;
 	clear: both;
-	min-width: var(--min, 320px);
+	min-width: var(--min);
 	width: 100%;
 }
 .wrap {
@@ -52,6 +50,18 @@ html {
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -840px;
+        width: 1680px;
+        background: url(../img/top-bg.svg) 0 0 no-repeat;
+        background-size: 1094px auto;
+    }
 	&>.cnt-section {
 		flex-shrink: 0;
 	}
@@ -75,6 +85,96 @@ html {
 		transition: all ease 0.2s;
 	}
 }
+.footer {
+    overflow: hidden;
+    .main-gr();
+    font-size: 9px;
+    line-height: 12px;
+    color: #FDFDFD;
+    padding: 12px 0 7px 0;
+    .inner-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .logo-wrap {
+        width: 74px;
+        flex-shrink: 0;
+        margin-bottom: 19px;
+        padding-top: 8px;
+    }
+    .soc-wrap {
+        display: flex;
+        flex-shrink: 0;
+        margin-bottom: 19px;
+    }
+    .button-soc {
+        flex-shrink: 0;
+        margin-left: 4px;
+    }
+    .info-inner-wrap {
+        width: 100%;
+        flex-shrink: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .info-wrap {
+        margin-bottom: 5px;
+        order: 2;
+    }
+    .wrap-first {
+        width: 100%;
+        order: 1;
+    }
+    a {
+        color: inherit;
+        &:hover {
+            color: #fff;
+        }
+    }
+}
+.header {
+    z-index: 99;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    .inner-wrap {
+        max-width: 1696px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 40px;
+    }
+    .popup-menu-wrap {
+        order: 2;
+    }
+    .actions-wrap {
+        display: none;
+        order: 3;
+    }
+    .action-wrap {
+        padding: 0 0 0 10px;
+        &:first-child {
+            padding-left: 0;
+        }
+    }
+    .logo-wrap {
+        width: 85px;
+        flex-shrink: 0;
+        order: 1;
+    }
+    .btn {
+        height: 42px;
+        padding: 0 3rem;
+        font-size: 16px;
+        line-height: 22px;
+        &:after, &:before {
+            border-radius: 21px;
+        }
+    }
+}
 .logo {
     display: block;
     position: relative;
@@ -90,5 +190,141 @@ html {
     img {
         display: block;
         width: 100%;
+    }
+}
+@media (max-width: 1023px) {
+    .header {
+        padding-top: 1px;
+        padding-bottom: 3px;
+        .inner-wrap {
+        }
+        .popup-menu-wrap {
+            width: 40px;
+            height: 40px;
+            flex-shrink: 0;
+        }
+        .logo-wrap {
+            padding-top: 2px;
+        }
+    }
+    .popup-menu-wrap {
+        .popup-content-block {
+            display: none;
+        }
+        .btn-popup {
+            display: block;
+        }
+    }
+}
+@media (min-width: 768px) {
+    .footer {
+        padding-top: 37px;
+        padding-bottom: 20px;
+        font-size: 12px;
+        .logo-wrap {
+            width: 160px;
+            margin-bottom: 4.4rem;
+            padding: 0;
+        }
+        .soc-wrap {
+            margin-bottom: 4.4rem;
+        }
+        .button-soc {
+            margin-left: 10px;
+        }
+        .info-wrap {
+            order: 1;
+            padding: 0 3rem 0 0;
+            margin-bottom: 10px;
+            width: auto;
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+        .wrap-copy {
+            min-width: 34%;
+        }
+        .wrap-first {
+            flex: 1;
+        }
+    }
+}
+@media (min-width: 1024px) {
+    .footer {
+        font-size: 16px;
+        .logo-wrap {
+            width: 180px;
+        }
+    }
+    .header {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        .inner-wrap {
+            min-height: 46px;
+        }
+        .popup-menu-wrap {
+            flex: 1;
+            padding: 0 1.5rem;
+        }
+        .logo-wrap {
+            width: 173px;
+        }
+        .actions-wrap {
+            display: flex;
+        }
+    }
+    .popup-menu-wrap {
+        font-size: 16px;
+        line-height: 22px;
+        .actions-wrap {
+            display: none;
+        }
+        .menu {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            a {
+                padding: 0 1.7rem;
+                display: block;
+                height: 30px;
+                line-height: 30px;
+                white-space: nowrap;
+                max-width: 300px;
+                text-overflow: ellipsis;
+                color: inherit;
+                &.active, &:hover {
+                    color: var(--clr-att);
+                }
+            }
+        }
+        .btn-popup {
+            display: none;
+        }
+    }
+}
+@media (min-width: 1024px) and (max-width: 1199px) {
+    .header {
+        .logo-wrap {
+            width: 140px;
+        }
+    }
+    .popup-menu-wrap {
+        font-size: 15px;
+        .menu {
+            a {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
+    }
+}
+@media (min-width: 1680px) {
+    .wrap {
+        &:before {
+            width: 100%;
+            left: 0;
+            right: 0;
+            margin: 0;
+        }
     }
 }
