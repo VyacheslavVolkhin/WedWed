@@ -101,6 +101,8 @@ body {
   box-sizing: border-box;
   -webkit-transform-origin: 50% 50%;
   transform-origin: 50% 50%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 hr {
   -webkit-box-sizing: content-box;
@@ -140,7 +142,7 @@ button::-moz-focus-inner {
 }
 input[type="submit"],
 button,
-.btn {
+.inner-btn {
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex;
