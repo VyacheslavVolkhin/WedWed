@@ -2,7 +2,7 @@
 			content styles
 \* ----------------------------------- */
 .gallery-box {
-    margin-bottom: 10px;
+    padding-bottom: 10px;
     position: relative;
     z-index: 3;
     padding-top: 14rem;
@@ -12,12 +12,24 @@
         width: 2988px;
         height: 1380px;
         background-color: #fff;
-        border-radius: 50%;
+        border-radius: 50% 50% 0 0;
         position: absolute;
         top: 0;
         left: 50%;
         z-index: -1;
         margin-left: -1490px;
+    }
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        z-index: -1;
+        width: 100vw;
+        margin-left: -50vw;
+        top: 1370px;
+        background-color: #fff;
     }
     .more-box {
         padding-bottom: 7rem;
@@ -204,6 +216,19 @@
     }
     .slider-wrap {
         margin: 0 -30px;
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 10px;
+            bottom: 10px;
+            left: 34px;
+            right: 34px;
+            border-radius: 50px;
+            background-color: #fff;
+        }
+    }
+    .sl-wrap {
     }
     .sl-wrap {
         padding: 0 30px;
@@ -358,6 +383,20 @@
 }
 .info-box {
     margin-bottom: 21rem;
+    position: relative;
+    z-index: 2;
+    &:after {
+        content: "";
+        position: absolute;
+        top: -140px;
+        bottom: -80px;
+        left: 50%;
+        right: 0;
+        width: 100vw;
+        margin-left: -50vw;
+        background-color: #fff;
+        z-index: -1;
+    }
     .title-box {
         margin-bottom: 5rem;
     }
@@ -703,6 +742,12 @@
     }
 }
 @media (max-width: 1023px) {
+    .info-box {
+        &:after {
+            top: -40px;
+            bottom: -30px;
+        }
+    }
     .gallery-box {
         .item-wrap {
             width: 280px;
@@ -807,6 +852,10 @@
         }
         .slider-wrap {
             margin: 0;
+            &:before {
+                left: 5px;
+                right: 5px;
+            }
         }
         .sl-wrap {
             padding: 0;
@@ -1049,7 +1098,7 @@
             display: block;
             width: 746px;
             height: 390px;
-            background: url(../img/lines01.png) center top no-repeat;
+            background: url(../img/lines01.svg) center top no-repeat;
             background-size: 100% auto;
             position: absolute;
             bottom: -140px;
@@ -1235,7 +1284,7 @@
             height: 1115px;
             //width: 1680px;
             //height: 1114px;
-            background: url(../img/lines02.png) center top no-repeat;
+            background: url(../img/lines02.svg) center top no-repeat;
             background-size: 100% auto;
             position: absolute;
             bottom: -430px;
