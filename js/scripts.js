@@ -198,15 +198,11 @@ $(document).ready(function(){
                     }
                 },
                 {
-                    breakpoint: 640,
+                    breakpoint: 768,
                     settings: {
-                        slidesToShow: 3,
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 2,
+                        slidesToShow: 1,
+                        variableWidth: true,
+                        infinite: false,
                     }
                 },
             ]
@@ -246,15 +242,11 @@ $(document).ready(function(){
                     }
                 },
                 {
-                    breakpoint: 640,
+                    breakpoint: 768,
                     settings: {
                         slidesToShow: 1,
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
+                        variableWidth: true,
+                        infinite: false,
                     }
                 },
             ]

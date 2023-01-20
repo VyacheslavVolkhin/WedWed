@@ -107,6 +107,24 @@
     }
     .tile-price {
         margin-left: 10px;
+        font-size: 30px;
+        line-height: 1.2;
+        letter-spacing: -0.035em;
+        font-weight: 600;
+        position: relative;
+        display: block;
+        &.price-old {
+            font-size: 17px;
+        }
+        &[data-unit] {
+            &:after {
+                font-size: 18px;
+                position: absolute;
+                top: 0;
+                right: 0;
+                text-align: right;
+            }
+        }
         &:first-child {
             margin-left: 0;
         }
@@ -161,7 +179,7 @@
         display: block;
         font-size: 10px;
         line-height: 14px;
-        color: var(--clr-att);
+        color: #FE5A68;
         text-transform: uppercase;
         font-weight: 400;
         letter-spacing: -0.01em;
@@ -513,24 +531,18 @@
     }
 }
 .elm-price, .tile-price {
+    display: inline-block;
     white-space: nowrap;
-    font-size: 30px;
-    line-height: 1.2;
-    letter-spacing: -0.035em;
-    font-weight: 600;
-    position: relative;
-    display: block;
     flex-shrink: 0;
     &.price-old {
-        font-size: 17px;
         color: #676D7B;
         font-weight: 400;
         &[data-unit] {
-            &:after {
+            &:before {
                 right: 20px;
             }
         }
-        &:after {
+        &:before {
             content: "";
             display: block;
             position: absolute;
@@ -543,24 +555,22 @@
         }
         &[data-unit] {
             padding-right: 12px;
-            &:before {
+            &:after {
                 font-size: 14px;
             }
         }
     }
     &[data-unit] {
-        padding-right: 12px;
-        &:before {
+        padding-right: 18px;
+        &:after {
             content: attr(data-unit);
-            font-size: 18px;
-            position: absolute;
-            top: 0;
-            right: 0;
-            text-align: right;
+            font-weight: 400;
+            font-family: 'Roboto', sans-serif;
         }
     }
 }
-
+[data-unit]:after {
+}
 .elm-ico, .button-ico, .menu-ico, .frm-ico, .tab-ico, .tile-ico {
     display: block;
     position: relative;
@@ -583,7 +593,7 @@
         height: 5rem;
         box-shadow: 0px 8px 40px rgba(210, 77, 101, 0.26);
         border-radius: 15px;
-        background-color: var(--clr-att);
+        background-color: #FF4C65;
         &.color-second {
             background: #5DFFB6;
         }
@@ -649,22 +659,181 @@
         border-radius: 11px;
         font-size: 12px;
     }
-}
-@media (min-width: 1024px) and (max-width: 1199px) {
     .item-tile-info {
         .tile-title {
             font-size: 3rem;
         }
     }
 }
+
 @media (max-width: 1199px) {
     .item-tile-info {
+        &:hover {
+            
+        }
         .tile-photo-wrap {
             &:first-child {
                 &+.tile-info-wrap {
                     padding-left: 6rem;
                 }
             }
+        }
+    }
+}
+@media (max-width: 1023px) {
+    .item-tile-article {
+        font-size: 14px;
+        line-height: 1.4;
+        &:hover {
+            box-shadow: 0px 8px 40px rgba(254, 113, 111, 0.16);
+        }
+        .tile-title {
+            font-size: 16px;
+            line-height: 1.15;
+            margin-bottom: 10px;
+        }
+        .tile-subtitle {
+            font-size: 10px;
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+        .tile-colors-wrap {
+            padding-bottom: 10px;
+        }
+    }
+}
+@media (max-width: 767px) {
+    .item-tile-price {
+        padding: 30px 30px 15px 30px;
+        border: none;
+        position: relative;
+        z-index: 2;
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(180deg, #FFF0F3 0%, #FFFFFF 34.9%);
+            border-radius: 20px;
+            z-index: -1;
+        }
+        &.tile-att {
+            &:before {
+                background: linear-gradient(180deg, #E4FFF3 0%, #FFFFFF 34.9%);
+            }
+        }
+        .tile-title, .tile-title.title-small {
+            font-size: 20px;
+            line-height: 1.2;
+        }
+        .tile-status {
+            letter-spacing: -0.035em;
+        }
+        .tile-info-title {
+            font-size: 16px;
+            line-height: 1.2;
+            margin-bottom: 10px;
+            letter-spacing: -0.035em;
+        }
+        .tile-price-wrap {
+            margin-bottom: 12px;
+        }
+        .tile-desc-wrap {
+            margin-top: 22px;
+        }
+        .tile-desc {
+            font-size: 14px;
+        }
+        .tile-info-wrap {
+            padding-bottom: 23px;
+        }
+        .tile-info {
+            margin-bottom: 15px;
+        }
+        .tile-price.price-old {
+            margin-top: 5px;
+        }
+    }
+    .item-tile-table {
+        display: block;
+        .tile-info-wrap {
+            width: 100%;
+            padding: 0;
+            margin: 0 0 22px 0;
+        }
+        .tile-inner-wrap {
+            width: 100%;
+            max-width: inherit;
+        }
+        .tile-photo-wrap {
+            width: 100%;
+            padding: 0;
+        }
+        .tile-title-wrap {
+            display: flex;
+            position: relative;
+            align-items: center;
+            min-height: 30px;
+            padding: 0 0 0 40px;
+            margin: 0 -10px 20px 0;
+            .tile-ico {
+                width: 30px;
+                height: 30px;
+                border-radius: 10px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                margin: 0;
+            }
+        }
+        .tile-title {
+            display: block;
+            width: 100%;
+            flex-shrink: 0;
+            margin: 0;
+            font-size: 20px;
+            line-height: 1.2;
+        }
+    }
+    .item-tile-info {
+        flex-direction: column;
+        .tile-info-wrap {
+            padding: 0;
+            width: 100%;
+            order: 2;
+            flex:inherit;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 3;
+        }
+        .tile-photo-wrap {
+            padding: 0;
+            width: 100%;
+            order: 1;
+            flex:inherit;
+            flex-shrink: 0;
+            margin: 0 0 20px 0;
+            &:first-child {
+                width: 100%;
+                padding: 0;
+                margin-bottom: 30px;
+                &+.tile-info-wrap {
+                    width: 100%;
+                    padding: 0;
+                }
+            }
+        }
+        .tile-title {
+            max-width: inherit;
+        }
+        ul {
+            margin-bottom: 14px;
+        }
+        .btn {
+            width: 100%;
         }
     }
 }
