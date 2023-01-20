@@ -266,10 +266,59 @@
     padding-bottom: 23px;
     max-width: 290px;
     margin: 0 auto;
+    font-size: 12px;
+    line-height: (16/12);
+    color: var(--clr-base);
+    text-align: left;
+    transition: all ease 0.2s;
     img, .tile-inner-wrap {
         display: block;
         width: 100%;
         transition: all ease 0.2s;
+        flex-shrink: 0;
+    }
+    .tile-inner-wrap {
+        padding: 0 15px;
+    }
+    .tile-title-wrap {
+        display: flex;
+        align-items: center;
+        margin: 0 0 10px 0;
+    }
+    .tile-photo {
+        width: (80/12em);
+        height: (80/12em);
+        border-radius: 50%;
+        overflow: hidden;
+        flex-shrink: 0;
+    }
+    .tile-title-inner {
+        flex: 1;
+        max-width: calc(100% - 6.666em);
+        padding: 0 0 0 8px;
+    }
+    .tile-title {
+        font-size: (14/12em);
+        font-weight: 600;
+        margin: 0 0 4px 0;
+    }
+    .tile-date {
+        color: #333;
+        margin: 0;
+    }
+    .tile-info {
+        color: #999;
+        font-size: (11/12em);
+        display: block;
+    }
+    .tile-text-title {
+        font-size: (14/12em);
+        font-weight: 500;
+        margin: 0 0 5px 0;
+    }
+    p {
+        margin: 0;
+        padding: 0;
     }
 }
 .item-tile-document {
@@ -759,6 +808,9 @@
     }
 }
 @media (max-width: 767px) {
+    .item-tile-review {
+        font-size: 10px;
+    }
     .item-tile-price {
         padding: 30px 30px 15px 30px;
         border: none;
