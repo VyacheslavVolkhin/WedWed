@@ -20,7 +20,7 @@ html, body {
     padding-left: var(--paddingContainer);
     padding-right: var(--paddingContainer);
 }
-.inner-wrap, .page-full {
+.inner-wrap, .inner-page-full {
     position: relative;
     clear: both;
     margin: 0 auto;
@@ -38,10 +38,10 @@ html, body {
         min-width: 0;
     }
 }
-.page-full {
+.inner-page-full {
     flex: 1 0 auto;
 }
-.wrap,
+.inner-wrapper,
     //.header,
     //.nav,
     //.footer,
@@ -51,7 +51,7 @@ html, body {
     min-width: var(--min);
     width: 100%;
 }
-.wrap {
+.inner-wrapper {
     overflow: hidden;
     min-height: 100vh;
     display: flex;
@@ -73,7 +73,7 @@ html, body {
     }
 }
 @media (min-width: 1680px) {
-    .wrap {
+    .inner-wrapper {
         &:before {
             width: 100%;
             left: 0;
