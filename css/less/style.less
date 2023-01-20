@@ -60,27 +60,30 @@ html, body {
         content: "";
         display: block;
         position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 50%;
-        margin-left: -840px;
-        width: 1680px;
-        background: url(../img/top-bg.svg) 0 0 no-repeat;
-        background-size: 1094px auto;
+        top: -116px;
+        right: 50%;
+        width: 1078px;
+        height: 1078px;
+        background: linear-gradient(180deg, #FFDAE0 0%, #FFF1F1 100%);
+        filter: blur(125px);
     }
     &>.cnt-section {
         flex-shrink: 0;
     }
 }
-@media (min-width: 1680px) {
+@media (max-width: 767px) {
     .inner-wrapper {
         &:before {
-            width: 100%;
-            left: 0;
-            right: 0;
-            margin: 0;
+            width: 677px;
+            height: 677px;
+            top: -140px;
+            right: 50%;
+            margin-right: -110px;
         }
     }
+}
+@media (min-width: 1680px) {
+    
 }
 @import 'items.less';
 @import 'content.less';
