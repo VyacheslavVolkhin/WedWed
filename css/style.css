@@ -895,6 +895,9 @@ body {
 .item-tile-info p {
   max-width: 28.125em;
 }
+.item-tile-info .inner-btn.inner-button-border:not(:hover):before {
+  background-color: #fff;
+}
 .item-tile-video {
   position: relative;
   display: block;
@@ -2932,7 +2935,7 @@ select.form-input:required:invalid {
   border-color: #FF4C65;
 }
 .inner-btn.inner-button-border:not(:hover):before {
-  background-color: #fff;
+  background-color: transparent;
 }
 .inner-btn.inner-button-border:hover:before,
 .inner-btn.inner-button-border.active:before {

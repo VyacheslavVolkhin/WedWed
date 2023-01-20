@@ -501,6 +501,15 @@
     ul, .h5-title, p {
         max-width: (450/16em);
     }
+    .inner-btn {
+        &.inner-button-border {
+            &:not(:hover) {
+                &:before {
+                    background-color: #fff;
+                }
+            }
+        }
+    }
 }
 .item-tile-video {
     position: relative;
