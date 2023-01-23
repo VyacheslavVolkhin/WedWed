@@ -9,10 +9,6 @@
     from {opacity: 0;transform: translate(0, -50px);}
     to {opacity: 1;transform: translate(0, 0px);}
 }
-.i, [class*="icon-"] {
-    display: block;
-    transition: none;
-}
 .img-bg-cover,
 .img-bg-contain {
     display: block;
@@ -43,15 +39,6 @@
         max-height: inherit;
         right: auto;
         bottom: auto;
-    }
-}
-.js-btn-toggle.active+.js-popup-block {display: block !important;}
-.js-popup-block {animation: fadein ease 0.3s;}
-.js-tab-block {
-    display: none;
-    animation: fadein ease 0.2s;
-    &.active {
-        display: block;
     }
 }
 .items-wrap {
@@ -98,8 +85,8 @@
         animation: fadein ease 0.2s;
     }
 }
-.slider-wrap,
-.slider,
+.inner-slider-wrap,
+.inner-slider,
 .sl-wrap {
     position: relative;
     line-height: 1;
@@ -107,45 +94,6 @@
 }
 .sl-wrap~.sl-wrap {
     display: none;
-}
-.slick-dots {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    position: relative;
-    line-height: 1;
-    text-align: center;
-    font-size: 0;
-    margin: 0;
-    li {
-        margin: 0 5px 5px 0;
-        padding: 0;
-        display: block;
-        &:before {
-            display: none;
-        }
-        button {
-            background: none;
-            border: none;
-            min-width: 0;
-            padding: 0;
-            box-shadow: none;
-            font-size: 0;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: #C4C4C4;
-            &:hover, &.active {
-                background: var(--clr-att);
-            }
-        }
-    }
-    .slick-active {
-        button {
-            background: var(--clr-att);
-        }
-    }
 }
 .item-tile,
 .tile-outer-wrap,
@@ -179,38 +127,4 @@
     text-indent: -999px;
     font-size: 0;
     color: transparent;
-}
-.tile-photo {
-    transform: translateZ(0);
-    img {
-        transition: all ease 0.2s;
-    }
-}
-.no-mbottom {
-    margin-bottom: 0 !important;
-}
-.no-mtop {
-    margin-top: 0 !important;
-}
-.elm-hidden {
-    display: none !important;
-}
-@media (max-width: 1023px) {
-    .elm-hidden-mobile {
-        display: none !important;
-    }
-    .slick-dots {
-        li {
-            button {
-                &:hover, &.active {
-                    background-color: #c4c4c4;
-                }
-            }
-        }
-    }
-}
-@media (min-width: 1024px) {
-    .elm-hidden-desktop {
-        display: none !important;
-    }
 }

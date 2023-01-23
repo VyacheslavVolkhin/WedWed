@@ -195,7 +195,7 @@
         margin: 0 auto 4rem auto;
         max-width: 750px;
     }
-    .slider-inner-wrap {
+    .inner-slider-inner-wrap {
         position: relative;
         width: 340px;
         height: 640px;
@@ -214,7 +214,7 @@
             z-index: 4;
         }
     }
-    .slider-wrap {
+    .inner-slider-wrap {
         margin: 0 -30px;
         &:before {
             content: "";
@@ -262,7 +262,7 @@
         margin-right: auto;
         max-width: 105rem;
     }
-    .slider-wrap {
+    .inner-slider-wrap {
         margin: 0 -2rem;
     }
     .sl-wrap {
@@ -301,16 +301,16 @@
 .gallery-slider-box {
     margin-bottom: 10rem;
     font-size: 16px;
-    .slider-tabs-wrap {
+    .inner-slider-tabs-wrap {
         margin: 0 -20px 9rem 0;
-        .slider-wrap {
+        .inner-slider-wrap {
             margin: 0;
         }
         .sl-wrap {
             padding: 0 20px 0 0;
         }
     }
-    .slider-wrap {
+    .inner-slider-wrap {
         margin: 0 -15px;
         position: relative;
         .sl-wrap {
@@ -392,10 +392,11 @@
         bottom: 50px;
         left: 50%;
         right: 0;
-        width: 100vw;
-        margin-left: -50vw;
+        width: 2988px;
+        margin-left: -1494px;
         background-color: #fff;
         z-index: -1;
+        border-radius: 1494px 1494px 0px 0px / 650px 650px 0px 0px;
         
     }
     .title-box {
@@ -780,7 +781,7 @@
     .top-box {
     }
     .guides-box {
-        .slider-wrap {
+        .inner-slider-wrap {
             margin: 0 -5px;
         }
         .sl-wrap {
@@ -847,11 +848,11 @@
         .title-box {
             margin-bottom: 40px;
         }
-        .slider-inner-wrap {
+        .inner-slider-inner-wrap {
             width: 278px;
             height: 524px;
         }
-        .slider-wrap {
+        .inner-slider-wrap {
             margin: 0;
             &:before {
                 left: 5px;
@@ -1004,7 +1005,7 @@
         .title-box {
             margin-bottom: 40px;
         }
-        .slider-wrap {
+        .inner-slider-wrap {
             padding-bottom: 80px;
             margin-left: calc(var(--paddingContainer) * -1);
             margin-right: calc(var(--paddingContainer) * -1);
@@ -1094,6 +1095,10 @@
         .items-wrap {
             z-index: 2;
         }
+        &:after {
+            width: 1035px;
+            margin-left: -517px;
+        }
         &:before {
             content: "";
             display: block;
@@ -1125,13 +1130,13 @@
         }
     }
     .gallery-slider-box {
-        .slider-tabs-wrap {
+        .inner-slider-tabs-wrap {
             margin: 0 -10px 40px 0;
             .sl-wrap {
                 padding: 0 10px 0 0;
             }
         }
-        .slider-wrap {
+        .inner-slider-wrap {
             padding-bottom: 80px;
         }
         .ico-arrow {
